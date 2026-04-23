@@ -817,6 +817,7 @@
         
         let isPlaying = false;
         let playPromise; // Track the global play promise
+        let hasInitializedSymphony = false;
 
         const safePlay = () => {
             try {
@@ -842,16 +843,20 @@
             }
         };
 
-        enterBtn.addEventListener('click', () => {
-            // Fade out modal and enable scrolling
-            modal.style.opacity = '0';
-            document.body.classList.remove('no-scroll');
-            setTimeout(() => { modal.style.display = 'none'; }, 700);
-            
-            // Play Audio Safely
+        const initializeSymphony = () => {
+            if (!hasInitializedSymphony) {
+                hasInitializedSymphony = true;
+                // Fade out modal and enable scrolling once.
+                modal.style.opacity = '0';
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => { modal.style.display = 'none'; }, 700);
+            }
+
             audio.volume = 0.5;
             safePlay();
-        });
+        };
+
+        enterBtn.addEventListener('click', initializeSymphony);
 
         audioToggle.addEventListener('click', () => {
             if (isPlaying) {
@@ -872,6 +877,33 @@
                 safePlay();
             }
         });
+
+        // Allow connected media wearables (including Meta glasses) to trigger playback.
+        document.addEventListener('keydown', (event) => {
+            if (
+                event.code === 'MediaPlayPause' ||
+                event.code === 'MediaPlay' ||
+                event.key === 'MediaPlayPause' ||
+                event.key === 'MediaPlay'
+            ) {
+                event.preventDefault();
+                initializeSymphony();
+            }
+        });
+
+        if ('mediaSession' in navigator) {
+            try {
+                navigator.mediaSession.setActionHandler('play', initializeSymphony);
+                navigator.mediaSession.setActionHandler('pause', () => {
+                    isPlaying = false;
+                    audio.pause();
+                    audioToggle.classList.remove('hidden');
+                    audioToggle.innerHTML = '&#128263;';
+                });
+            } catch (err) {
+                console.log('Media session actions unavailable:', err);
+            }
+        }
 
         // --- CHART JS LOGIC ---
         Chart.defaults.color = '#94a3b8';
