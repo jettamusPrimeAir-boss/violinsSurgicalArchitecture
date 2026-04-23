@@ -102,6 +102,7 @@
             <div class="flex flex-wrap justify-center gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
                 <a href="#hero" class="hover:text-cyan-400 transition-colors">The Acronym</a>
                 <a href="#engine" class="hover:text-cyan-400 transition-colors">Core Engine</a>
+                <a href="#jf-os" class="hover:text-emerald-400 transition-colors">JF-OS</a>
                 <a href="#dual-use" class="hover:text-cyan-400 transition-colors">Dual-Use</a>
                 <a href="#roadmap" class="hover:text-cyan-400 transition-colors">Roadmap</a>
                 <a href="#sow" class="hover:text-indigo-400 transition-colors">SOW</a>
@@ -247,7 +248,67 @@
         </div>
     </section>
 
-    <!-- 3. Dual-Use Applications (Tabs) -->
+    <!-- 3. JF-OS Core Sub-Architecture -->
+    <section id="jf-os" class="py-20 px-6 bg-slate-800/30 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <p class="text-emerald-400 uppercase tracking-[0.2em] text-xs font-mono-custom mb-3">Document Integration</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">JF-OS Core Sub-Architecture & Autonomy Engine</h2>
+                <p class="text-slate-400 max-w-4xl mx-auto">The uploaded architecture brief defines JF-OS as a deterministic control loop for cable-driven continuum robotics, designed to close hysteresis gaps at both software and hardware layers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="glass-panel p-6 rounded-xl border-t-4 border-t-emerald-400">
+                    <h3 class="text-emerald-400 font-mono-custom text-sm uppercase tracking-widest mb-2">Context</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">Predictive control, hardware bridging, and synchronized telemetry for supervised autonomous surgery.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-t-4 border-t-cyan-400">
+                    <h3 class="text-cyan-400 font-mono-custom text-sm uppercase tracking-widest mb-2">Target Environment</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">NVIDIA AGX Orin to dVRK controller integration within HERO Lab workflows.</p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-2xl mb-10">
+                <h3 class="text-xl font-bold mb-3">System Overview</h3>
+                <p class="text-slate-300 leading-relaxed">JF-OS (Joint-Fidelity Operating System) is framed as a four-module architecture that supports Level 4 supervised autonomy by compensating for nonlinear tendon friction and stretch. The document positions this stack as the <strong>D.A.V.I.N.C.I.</strong> loop (Deterministic Autonomous Versatile Integrated Neural Compensation Interface), converting high-level intent into low-latency physical execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+                <div class="glass-panel p-6 rounded-xl border border-violet-500/40">
+                    <h4 class="text-violet-300 text-lg font-bold mb-2">P.O.E.M.</h4>
+                    <p class="text-violet-400 text-xs font-mono-custom uppercase tracking-widest mb-3">Phasing Optimally Efficient Maximizers</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">NPU-accelerated predictive driver that estimates hysteresis and pre-computes counter-steer torque, with document-stated inference latency under 0.5ms.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border border-blue-500/40">
+                    <h4 class="text-blue-300 text-lg font-bold mb-2">M.O.P.E.D.</h4>
+                    <p class="text-blue-400 text-xs font-mono-custom uppercase tracking-widest mb-3">Modular Operating Platform for Engineering & Development</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Deterministic ROS 2-native chassis that translates P.O.E.M. outputs into low-level dVRK current commands with stable microsecond-scale timing.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border border-amber-500/40">
+                    <h4 class="text-amber-300 text-lg font-bold mb-2">S.L.I.P.</h4>
+                    <p class="text-amber-400 text-xs font-mono-custom uppercase tracking-widest mb-3">Stochastic Linearization via Induced Phasing</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Active friction-cancellation layer that overlays stochastic 10kHz vibration to reduce stiction while avoiding fixed-frequency resonance risk.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border border-rose-500/40">
+                    <h4 class="text-rose-300 text-lg font-bold mb-2">M.E.O.W.</h4>
+                    <p class="text-rose-400 text-xs font-mono-custom uppercase tracking-widest mb-3">Modular Embedded Operating Wrapper</p>
+                    <p class="text-slate-300 text-sm leading-relaxed">Synchronous telemetry wrapper that timestamps torque, FBG shape-sensing, and kinematics to align hardware traces with surgical camera streams.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/70 border border-slate-700 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-5">JF-OS Data Pipeline (Execution Flow)</h3>
+                <ol class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                    <li><strong class="text-cyan-400">1. Intake (M.E.O.W.):</strong> Collects FBG and motor encoder state and synchronizes with the high-level autonomy planner.</li>
+                    <li><strong class="text-violet-400">2. Prediction (P.O.E.M.):</strong> Estimates the upcoming hysteresis gap and computes the required counter-steer torque.</li>
+                    <li><strong class="text-blue-400">3. Transmission (M.O.P.E.D.):</strong> Converts predicted torque matrices into deterministic motor-layer commands.</li>
+                    <li><strong class="text-amber-400">4. Actuation (S.L.I.P.):</strong> Adds stochastic 10kHz jitter during execution to maintain low-friction cable behavior.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Dual-Use Applications (Tabs) -->
     <section id="dual-use" class="py-20 px-6 bg-slate-800/30 border-b border-slate-800">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-10">
