@@ -819,24 +819,35 @@
         let playPromise; // Track the global play promise
         let hasInitializedSymphony = false;
 
+        const setPlayingUI = (playing) => {
+            isPlaying = playing;
+            audioToggle.classList.remove('hidden');
+            audioToggle.innerHTML = playing ? '&#128266;' : '&#128263;';
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
+            }
+        };
+
+        const completeSymphonyInitialization = () => {
+            if (hasInitializedSymphony) return;
+            hasInitializedSymphony = true;
+            modal.style.opacity = '0';
+            document.body.classList.remove('no-scroll');
+            setTimeout(() => { modal.style.display = 'none'; }, 700);
+        };
+
         const safePlay = () => {
             try {
                 playPromise = audio.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
-                        isPlaying = true;
-                        audioToggle.classList.remove('hidden');
-                        audioToggle.innerHTML = '&#128266;'; // Speaker with sound icon
+                        setPlayingUI(true);
                     }).catch(e => {
                         console.log("Audio playback prevented.", e);
-                        isPlaying = false;
-                        audioToggle.classList.remove('hidden');
-                        audioToggle.innerHTML = '&#128263;'; // Muted icon
+                        setPlayingUI(false);
                     });
                 } else {
-                    isPlaying = true;
-                    audioToggle.classList.remove('hidden');
-                    audioToggle.innerHTML = '&#128266;';
+                    setPlayingUI(true);
                 }
             } catch (err) {
                 console.log("Audio play exception caught:", err);
@@ -844,14 +855,7 @@
         };
 
         const initializeSymphony = () => {
-            if (!hasInitializedSymphony) {
-                hasInitializedSymphony = true;
-                // Fade out modal and enable scrolling once.
-                modal.style.opacity = '0';
-                document.body.classList.remove('no-scroll');
-                setTimeout(() => { modal.style.display = 'none'; }, 700);
-            }
-
+            completeSymphonyInitialization();
             audio.volume = 0.5;
             safePlay();
         };
@@ -860,8 +864,7 @@
 
         audioToggle.addEventListener('click', () => {
             if (isPlaying) {
-                isPlaying = false;
-                audioToggle.innerHTML = '&#128263;'; // Muted icon
+                setPlayingUI(false);
                 
                 // Safely pause only after the play promise resolves to avoid AbortError
                 if (playPromise !== undefined) {
@@ -874,7 +877,7 @@
                     audio.pause();
                 }
             } else {
-                safePlay();
+                initializeSymphony();
             }
         });
 
@@ -893,17 +896,29 @@
 
         if ('mediaSession' in navigator) {
             try {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: 'VIOLINS Symphony',
+                    artist: 'VIOLINS Architecture',
+                    album: 'Master Portfolio'
+                });
                 navigator.mediaSession.setActionHandler('play', initializeSymphony);
                 navigator.mediaSession.setActionHandler('pause', () => {
-                    isPlaying = false;
                     audio.pause();
-                    audioToggle.classList.remove('hidden');
-                    audioToggle.innerHTML = '&#128263;';
+                    setPlayingUI(false);
                 });
             } catch (err) {
                 console.log('Media session actions unavailable:', err);
             }
         }
+
+        // Ensure hardware-initiated media events also initialize the website UI state.
+        audio.addEventListener('play', () => {
+            completeSymphonyInitialization();
+            setPlayingUI(true);
+        });
+        audio.addEventListener('pause', () => {
+            setPlayingUI(false);
+        });
 
         // --- CHART JS LOGIC ---
         Chart.defaults.color = '#94a3b8';
