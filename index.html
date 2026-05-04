@@ -34,6 +34,28 @@
         .vertebra-line { background: linear-gradient(to top, #10b981, #ef4444); width: 2px; height: 100px; }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+
+        .portfolio-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .portfolio-btn.active {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: #a78bfa;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+            color: #f8fafc;
+        }
+        .project-display {
+            display: none;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .project-display.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-cyan-500 selection:text-white">
@@ -48,6 +70,7 @@
             <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <a href="#dynamics" class="hover:text-cyan-400 transition-colors">Dynamics</a>
                 <a href="#violins" class="hover:text-violet-400 transition-colors">Protocol</a>
+                <a href="#portfolio" class="hover:text-amber-400 transition-colors">Portfolio</a>
                 <a href="#roadmap" class="hover:text-emerald-400 transition-colors">Omega Roadmap</a>
                 <a href="#agency" class="hover:text-amber-400 transition-colors border border-amber-500/50 px-3 py-1 rounded-full">The Ask</a>
             </div>
@@ -172,7 +195,104 @@
         </div>
     </section>
 
-    <!-- SECTION 3: THE XYZ CONNECTOME (8/8/4/4) -->
+    <!-- SECTION 3: ENGINEERING SUBPORTFOLIOS -->
+    <section id="portfolio" class="py-20 px-6 bg-slate-900/20 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold mb-4 text-amber-400 uppercase tracking-tighter">Engineering Subportfolios</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Click to expand project-specific architectural telemetry and current build versions.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button type="button" onclick="showProject('america')" class="portfolio-btn px-6 py-3 rounded-xl text-slate-400 font-bold uppercase tracking-widest text-xs hover:text-white" id="btn-america" aria-controls="project-america">A.M.E.R.I.C.A.</button>
+                <button type="button" onclick="showProject('spider')" class="portfolio-btn px-6 py-3 rounded-xl text-slate-400 font-bold uppercase tracking-widest text-xs hover:text-white" id="btn-spider" aria-controls="project-spider">daSpiderVINCI</button>
+                <button type="button" onclick="showProject('gas')" class="portfolio-btn px-6 py-3 rounded-xl text-slate-400 font-bold uppercase tracking-widest text-xs hover:text-white" id="btn-gas" aria-controls="project-gas">GAS PEDAL</button>
+                <button type="button" onclick="showProject('jesseract')" class="portfolio-btn px-6 py-3 rounded-xl text-slate-400 font-bold uppercase tracking-widest text-xs hover:text-white" id="btn-jesseract" aria-controls="project-jesseract">Jesseract</button>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div id="project-america" class="project-display glass-panel p-8 md:p-12 rounded-[2rem] border-l-4 border-cyan-400" role="region" aria-labelledby="btn-america">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold text-white mb-2">A.M.E.R.I.C.A.</h3>
+                            <p class="text-cyan-400 font-mono-custom text-xs uppercase tracking-widest">Agentic Mobile Efficiency Rig // Vers. Mk. I</p>
+                        </div>
+                        <div class="text-slate-600 font-black text-4xl italic">I</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div class="space-y-4">
+                            <p class="text-slate-300 leading-relaxed">A modular, rapid-deployment tricycle rig designed to function as a mobile command center for the "Bridge Phase." Built to load into a Toyota Corolla LE bumper without disassembly.</p>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Segway Ninebot S Kinetic Drive</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Seville 12-Drawer Payload Hub</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-500"></i> Clevis Pin Quick-Release System</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800">
+                            <h4 class="text-xs font-bold text-slate-500 uppercase mb-4 tracking-widest">Mechanical Telemetry</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between text-xs font-mono-custom"><span>Assembly Time</span> <span class="text-emerald-400">180s</span></div>
+                                <div class="flex justify-between text-xs font-mono-custom"><span>Payload Capacity</span> <span class="text-emerald-400">120lbs</span></div>
+                                <div class="flex justify-between text-xs font-mono-custom"><span>Corolla Fit-Check</span> <span class="text-emerald-400">PASS</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-spider" class="project-display glass-panel p-8 md:p-12 rounded-[2rem] border-l-4 border-blue-500" role="region" aria-labelledby="btn-spider">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold text-white mb-2">daSpiderVINCI</h3>
+                            <p class="text-blue-400 font-mono-custom text-xs uppercase tracking-widest">Surgical Robotics STEM Curriculum // Vers. Mk. I</p>
+                        </div>
+                        <div class="text-slate-600 font-black text-4xl italic">I</div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed mb-6">A gamified B2B curriculum where students operate a "Surgical Assembly Line." It utilizes LEGO SPIKE Prime hardware to perform A/B clinical trials on network latency and automated overrides.</p>
+                    <div class="bg-blue-900/20 p-6 rounded-2xl border border-blue-500/20">
+                        <h4 class="text-white font-bold text-sm mb-3">Modular Pod Architecture:</h4>
+                        <p class="text-xs text-slate-400 italic">16 Students | 8 Pods | 1:2 Hardware Ratio. Each pod builds a complete wrist/arm tele-op system for unified data harvesting.</p>
+                    </div>
+                </div>
+
+                <div id="project-gas" class="project-display glass-panel p-8 md:p-12 rounded-[2rem] border-l-4 border-rose-500" role="region" aria-labelledby="btn-gas">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold text-white mb-2">GAS PEDAL</h3>
+                            <p class="text-rose-400 font-mono-custom text-xs uppercase tracking-widest">NPU Sparsity Engine // Vers. Mk. I</p>
+                        </div>
+                        <div class="text-slate-600 font-black text-4xl italic">I</div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="md:col-span-2 space-y-4">
+                            <p class="text-slate-300 leading-relaxed">The hardware engine designed to solve the thermal necrosis bottleneck in neuroengineering. It physically bypasses zero-value calculations to maintain FDA thermal limits in intracranial environments.</p>
+                            <div class="math-block text-rose-300 text-xs">If (weight == 0) skip calculation; // Transistor-level gating</div>
+                        </div>
+                        <div class="bg-rose-950/20 p-5 rounded-xl border border-rose-500/20">
+                            <h5 class="text-rose-400 font-bold text-xs uppercase mb-2">Efficiency Rating</h5>
+                            <div class="text-2xl font-black text-white">70% <span class="text-xs text-slate-500 font-normal">Power Retention</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-jesseract" class="project-display glass-panel p-8 md:p-12 rounded-[2rem] border-l-4 border-violet-500" role="region" aria-labelledby="btn-jesseract">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold text-white mb-2">The Jesseract</h3>
+                            <p class="text-violet-400 font-mono-custom text-xs uppercase tracking-widest">5D Connectome Dyson Sphere // Vers. Mk. I</p>
+                        </div>
+                        <div class="text-slate-600 font-black text-4xl italic">I</div>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed mb-6">A spherical visual array wrapped around a crystalline crystalline structure. It functions as a digital <strong>"En"</strong> field, providing frictionless spatial awareness to preserve executive function.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-violet-900/30 px-4 py-2 rounded-lg border border-violet-500/30 text-xs text-violet-200">Temporal Summation Buffering</div>
+                        <div class="bg-violet-900/30 px-4 py-2 rounded-lg border border-violet-500/30 text-xs text-violet-200">4D Impulse Filtering</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: THE XYZ CONNECTOME (8/8/4/4) -->
     <section class="py-20 px-6 bg-slate-900/50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -239,7 +359,7 @@
         </div>
     </section>
 
-    <!-- SECTION 4: THE 25-YEAR OMEGA ROADMAP -->
+    <!-- SECTION 5: THE 25-YEAR OMEGA ROADMAP -->
     <section id="roadmap" class="py-20 px-6">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold mb-12 text-center">Jester Omega Roadmap</h2>
@@ -272,7 +392,7 @@
         </div>
     </section>
 
-    <!-- SECTION 5: THE ASK (MENTORSHIP PITCH) -->
+    <!-- SECTION 6: THE ASK (MENTORSHIP PITCH) -->
     <section id="agency" class="py-20 px-6 bg-slate-900">
         <div class="max-w-4xl mx-auto glass-panel p-10 md:p-16 rounded-[3rem] border border-amber-500/30 relative">
             <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-amber-500 text-slate-950 font-extrabold px-6 py-2 rounded-full text-sm uppercase tracking-widest">
@@ -308,6 +428,23 @@
 
     <script>
         lucide.createIcons();
+
+        function showProject(projectId) {
+            document.querySelectorAll('.project-display').forEach(display => {
+                display.classList.remove('active');
+            });
+            document.querySelectorAll('.portfolio-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            document.getElementById('project-' + projectId).classList.add('active');
+            const activeButton = document.getElementById('btn-' + projectId);
+            activeButton.classList.add('active');
+            activeButton.setAttribute('aria-selected', 'true');
+        }
+
+        showProject('america');
     </script>
 </body>
 </html>
