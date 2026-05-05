@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OMNI MVP A.R.C.H. | Apex Recursive Channel Hub</title>
+    <title>OMNI MVP | Executive Recruitment Brief</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
@@ -48,34 +48,29 @@
         }
 
         .terminal-window::before {
-            content: '● ● ●';
+            content: '';
             position: absolute;
-            top: -18px;
+            top: -15px;
             left: 12px;
-            color: #64748b;
-            font-size: 10px;
-            letter-spacing: 2px;
+            width: 8px;
+            height: 8px;
+            background: #64748b;
+            border-radius: 999px;
+            box-shadow: 14px 0 0 #475569, 28px 0 0 #334155;
         }
 
         .terminal-input:focus {
             outline: none;
         }
 
-        .acronym-block {
-            border-left: 2px solid;
-            padding-left: 16px;
-            position: relative;
+        .blink-cursor {
+            animation: blink 1s step-end infinite;
         }
 
-        .acronym-block::before {
-            background-color: currentColor;
-            border-radius: 50%;
-            content: '';
-            height: 10px;
-            left: -6px;
-            position: absolute;
-            top: 0;
-            width: 10px;
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -99,245 +94,186 @@
             <div class="font-extrabold tracking-widest text-xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 flex items-center gap-2">
                 <i data-lucide="infinity" class="w-6 h-6 text-cyan-400"></i> OMNI MVP A.R.C.H.
             </div>
-            <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">
-                <a href="#matrix" class="hover:text-cyan-400 transition-colors">(Acronym)³ Matrix</a>
-                <a href="#abstract" class="hover:text-violet-400 transition-colors">(Abstract)³ Gate</a>
-                <a href="#america" class="hover:text-emerald-400 transition-colors">A.M.E.R.I.C.A.</a>
-                <a href="#evolution" class="hover:text-amber-400 transition-colors">Evolution Matrix</a>
+            <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                <a href="#mission" class="hover:text-cyan-400 transition-colors">The Mission</a>
+                <a href="#tech" class="hover:text-violet-400 transition-colors">Tech Stack</a>
+                <a href="#roles" class="hover:text-emerald-400 transition-colors">Open Roles</a>
+                <a href="#apply" class="hover:text-amber-400 transition-colors border border-amber-500/30 px-3 py-1 rounded bg-amber-500/10">Apply</a>
             </nav>
         </div>
     </header>
 
-    <section id="matrix" class="pt-20 pb-16 px-6 relative overflow-hidden">
+    <section class="pt-24 pb-16 px-6 relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-800 via-slate-950 to-slate-950 -z-10"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-cyan-400 text-xs font-mono-custom mb-6 border border-cyan-500/30">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Recruitment Protocol: Active
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white">
+                Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-400">Autonomy.</span>
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed mb-8">
+                We are the Apex Recursive Channel Hub. A deep-tech incubator and neuro-architecture collective bridging the gap between educational robotics and DARPA-level biomechatronics. We build without burning out.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#apply" class="px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded shadow-[0_0_20px_rgba(34,211,238,0.3)] transition-all transform hover:scale-105 uppercase tracking-widest text-sm font-mono-custom">
+                    Join the Matrix
+                </a>
+            </div>
+        </div>
+    </section>
 
+    <section id="mission" class="py-20 px-6 bg-slate-950 border-y border-slate-800">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-cyan-400 text-xs font-mono-custom mb-6 border border-cyan-500/30">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    Dimensional Acronym Resolution Active
-                </div>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-4 text-white">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">O.M.N.I.</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">M.V.P.</span>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-rose-400">A.R.C.H.</span>
-                </h1>
-                <p class="text-slate-400 text-lg md:text-xl font-light max-w-3xl mx-auto">
-                    Fractal branding. Every layer of the nomenclature decompiles into a functional directive.
-                </p>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Our Core Directives (XYZ Framework)</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Sovereign leverage requires strict alignment. We reject toxic VC capital and hustle culture in favor of sustainable, high-velocity engineering.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-                <div class="glass-panel p-8 rounded-2xl border-t-4 border-t-emerald-400">
-                    <h2 class="text-3xl font-black text-emerald-400 mb-6 font-mono-custom tracking-widest">O.M.N.I.</h2>
-                    <div class="space-y-4 font-mono-custom text-sm text-slate-300 acronym-block border-emerald-500/50 text-emerald-400">
-                        <p><strong class="text-white text-lg">O</strong>ntological</p>
-                        <p><strong class="text-white text-lg">M</strong>atrix for</p>
-                        <p><strong class="text-white text-lg">N</strong>eural</p>
-                        <p><strong class="text-white text-lg">I</strong>ntegration</p>
-                    </div>
-                    <p class="mt-6 text-xs text-slate-500 leading-relaxed">
-                        The overarching philosophical framework mapping physical, digital, and neurodivergent states into one cohesive reality.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-xl border-t-4 border-rose-500">
+                    <h3 class="text-xl font-bold text-rose-400 mb-2">X: The Burnout Crash</h3>
+                    <p class="text-sm text-slate-300">Trying to achieve massive ambition while masking drains the biological battery. We prioritize systemic thermal limits, including sleep and executive function, over blind output.</p>
                 </div>
-
-                <div class="glass-panel p-8 rounded-2xl border-t-4 border-t-cyan-400">
-                    <h2 class="text-3xl font-black text-cyan-400 mb-6 font-mono-custom tracking-widest">M.V.P.</h2>
-                    <div class="space-y-4 font-mono-custom text-sm text-slate-300 acronym-block border-cyan-500/50 text-cyan-400">
-                        <p><strong class="text-white text-lg">M</strong>aster</p>
-                        <div class="pl-4 border-l border-slate-700 py-2 my-2 bg-slate-900/50 rounded">
-                            <p class="text-blue-400 text-xs mb-1">↳ <strong class="text-white text-base">V.I.O.L.I.N.S.</strong></p>
-                            <p class="text-[10px] text-slate-400 leading-tight">Vinci Interfacing<br>Optimus Leo<br>Iron National Star</p>
-                        </div>
-                        <p><strong class="text-white text-lg">P</strong>rime</p>
-                    </div>
-                    <p class="mt-6 text-xs text-slate-500 leading-relaxed">
-                        The core architectural engine. Contains the nested hardware and software protocols: DOPAMINE API and GAS PEDAL NPU.
-                    </p>
+                <div class="glass-panel p-8 rounded-xl border-t-4 border-cyan-500">
+                    <h3 class="text-xl font-bold text-cyan-400 mb-2">Y: The Safe Sandbox</h3>
+                    <p class="text-sm text-slate-300">We operate @neopolitanPan_CakeStack (nPCS) Consulting. We build B2B curriculums and Stack Overflow projects to generate non-dilutive capital and maintain absolute equity.</p>
                 </div>
-
-                <div class="glass-panel p-8 rounded-2xl border-t-4 border-t-violet-400">
-                    <h2 class="text-3xl font-black text-violet-400 mb-6 font-mono-custom tracking-widest">A.R.C.H.</h2>
-                    <div class="space-y-4 font-mono-custom text-sm text-slate-300 acronym-block border-violet-500/50 text-violet-400">
-                        <p><strong class="text-white text-lg">A</strong>pex</p>
-                        <p><strong class="text-white text-lg">R</strong>ecursive</p>
-                        <p><strong class="text-white text-lg">C</strong>hannel</p>
-                        <p><strong class="text-white text-lg">H</strong>ub</p>
-                    </div>
-                    <p class="mt-6 text-xs text-slate-500 leading-relaxed">
-                        The structural endgame: a recursive foundation where sovereign capital funds sanctuary environments, which then spawn new architecture.
-                    </p>
+                <div class="glass-panel p-8 rounded-xl border-t-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-emerald-400 mb-2">Z: The Secret Harvest</h3>
+                    <p class="text-sm text-slate-300">While stable in the sandbox, we quietly harvest proprietary multi-axis teleoperation data to build the real empire: the O.C.T.A.V.I.U.S. wearable robotic platform.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="abstract" class="py-24 px-6 bg-slate-950 border-y border-slate-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">(Abstract)³ Validation Gate</h2>
-                <p class="text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
-                    Sovereign leverage requires strict alignment. Before deep-dive collaboration occurs, stakeholders must prove comprehension of the core survival logic. Read the XYZ framework, then reflect it back.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div class="space-y-6">
-                    <div class="bg-slate-900/80 p-6 rounded-xl border-l-4 border-rose-500 shadow-lg">
-                        <h4 class="text-rose-400 font-bold text-lg mb-1 flex items-center gap-2">X: The Burnout Crash (Problem)</h4>
-                        <p class="text-sm text-slate-300 leading-relaxed">Trying to achieve massive ambition while masking in a neurotypical world drains the biological battery. The architecture must build without burning core capital.</p>
-                    </div>
-                    <div class="bg-slate-900/80 p-6 rounded-xl border-l-4 border-cyan-500 shadow-lg">
-                        <h4 class="text-cyan-400 font-bold text-lg mb-1 flex items-center gap-2">Y: The Safe Sandbox (Solution)</h4>
-                        <p class="text-sm text-slate-300 leading-relaxed">Actively designing low-stress environments, such as STEM education and B2B licensing, generates non-dilutive capital without demanding peace as the price.</p>
-                    </div>
-                    <div class="bg-slate-900/80 p-6 rounded-xl border-l-4 border-emerald-500 shadow-lg">
-                        <h4 class="text-emerald-400 font-bold text-lg mb-1 flex items-center gap-2">Z: The Secret Harvest (Execution)</h4>
-                        <p class="text-sm text-slate-300 leading-relaxed">While stable in the sandbox, the real empire, Master VIOLINS Prime, is built quietly. Internal optimization stays free from VC constraints and toxic angel capital.</p>
-                    </div>
-                </div>
-
-                <div class="terminal-window p-6 h-full flex flex-col shadow-[0_0_50px_rgba(34,211,238,0.15)] border-cyan-900/50">
-                    <div class="mb-6 border-b border-slate-800 pb-4">
-                        <p class="text-cyan-500 font-mono-custom text-xs uppercase tracking-widest mb-1 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4"></i> ARCH_VALIDATION_PROTOCOL.exe</p>
-                        <p class="text-slate-400 text-sm font-mono-custom">Awaiting Stakeholder Synthesis...</p>
-                    </div>
-
-                    <div id="terminal-output" class="font-mono-custom text-sm text-slate-300 space-y-3 mb-6 flex-grow overflow-y-auto" aria-live="polite">
-                        <p class="text-slate-500">&gt; SYSTEM: Presenting XYZ Framework.</p>
-                        <p class="text-slate-500">&gt; SYSTEM: To proceed, please provide a reflective TL;DR (Abstract)³ of the XYZ Framework.</p>
-                        <p class="text-rose-400">&gt; PROMPT: Prove you understand the Sovereign Founder's baseline requirement for survival and scale.</p>
-                    </div>
-
-                    <div class="mt-auto">
-                        <label class="flex items-center gap-2 text-cyan-400 font-mono-custom text-sm mb-2" for="tldr-input">
-                            <span>$</span>
-                            <input type="text" id="tldr-input" class="terminal-input bg-transparent border-none w-full text-white placeholder-slate-600 focus:outline-none focus:ring-0" placeholder="Type your reflective TL;DR here..." autocomplete="off">
-                        </label>
-                        <button id="validate-btn" class="w-full bg-cyan-950/50 hover:bg-cyan-900/80 text-cyan-400 border border-cyan-800/50 rounded py-2 text-xs font-mono-custom font-bold uppercase tracking-widest transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
-                            Execute Validation
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="america" class="py-20 px-6 border-b border-slate-800 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">The Primary Physical Node</h2>
-                <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">A.M.E.R.I.C.A. Mk. I: Agentic Mobile Efficiency Rig with Integrated Curriculum Architecture. The modular deployment vehicle executing the Y sandbox.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-panel p-6 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
-                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-4"><i data-lucide="package" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Cargo Vault</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">Seville organizer mounted in a collapsible wagon. Houses 10 Chromebooks and 8 SPIKE kits. Loads fully assembled into a Corolla.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors">
-                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center mb-4"><i data-lucide="zap" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Kinetic Drive</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">Segway Ninebot S propulsion unit connected through a quick-release clevis-pin wishbone arm, neutralizing physical deployment exhaustion.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border border-slate-700 hover:border-cyan-500 transition-colors">
-                    <div class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-lg flex items-center justify-center mb-4"><i data-lucide="monitor" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-white mb-2">Agentic HUD</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">InMotion E20 steering column acting as the Fractional CTO command deck, housing the tablet interface and Ocarina grounding dock.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="evolution" class="py-24 px-6 bg-slate-950 border-b border-slate-800 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/20 via-slate-950 to-slate-950 -z-10"></div>
+    <section id="tech" class="py-20 px-6 border-b border-slate-800 bg-slate-900/30">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16 text-center">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-amber-400 text-xs font-mono-custom mb-6 border border-amber-500/30">
-                    <i data-lucide="flame" class="w-4 h-4"></i> AuraFarming Protocol Active
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">The Architecture &amp; Tech Stack</h2>
+                <p class="text-slate-400 text-lg leading-relaxed max-w-3xl mx-auto">From introductory physical effectors to 5D cognitive filtering logic. This is what you will be building.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white border-b border-slate-700 pb-3 flex items-center gap-3"><i data-lucide="cpu" class="text-emerald-400"></i> Hardware Pipeline</h3>
+                    <div class="glass-panel p-6 rounded-lg border-l-4 border-blue-500">
+                        <strong class="text-blue-400 block mb-1 uppercase tracking-wider text-xs">Phase 1: VDVSA</strong>
+                        <p class="text-sm text-slate-300">Vitruvian Da Vinci Spider Apparatus. A modular robotics system teaching complex kinematics and harvesting tele-op datasets.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-lg border-l-4 border-emerald-500">
+                        <strong class="text-emerald-400 block mb-1 uppercase tracking-wider text-xs">Deployment: A.M.E.R.I.C.A. Mk. I</strong>
+                        <p class="text-sm text-slate-300">Agentic Mobile Efficiency Rig. The physical, Segway-powered deployment vehicle running custom Agentic HUDs and edge nodes.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-lg border-l-4 border-rose-500">
+                        <strong class="text-rose-400 block mb-1 uppercase tracking-wider text-xs">Endgame: O.C.T.A.V.I.U.S.</strong>
+                        <p class="text-sm text-slate-300">Wearable, multi-limbed kinematic rig driven by an Edge NPU with fault-tolerant, redundant Bluetooth mesh networks.</p>
+                    </div>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">The Saiyan Evolution Framework</h2>
-                <p class="text-slate-400 text-lg leading-relaxed max-w-4xl mx-auto">
-                    Mapping the computational progression of artificial intelligence through the lens of shonen escalation. This framework decentralizes elite computing, allowing hard work and open-source multipliers to rival innate neurodivergent talent.
+
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white border-b border-slate-700 pb-3 flex items-center gap-3"><i data-lucide="code" class="text-violet-400"></i> Software: The DOPAMINE API</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-panel p-5 rounded-lg border border-slate-700 hover:border-cyan-500 transition-colors">
+                            <strong class="text-cyan-400 block mb-1 text-sm">POEM Workflow</strong>
+                            <p class="text-xs text-slate-400">Rhythmic, natural translation of system intent into human-readable outputs.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-lg border border-slate-700 hover:border-rose-500 transition-colors">
+                            <strong class="text-rose-400 block mb-1 text-sm">SLIP Router</strong>
+                            <p class="text-xs text-slate-400">Critical priority routing to bypass standard processing queues for zero-latency safety.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-lg border border-slate-700 hover:border-amber-500 transition-colors">
+                            <strong class="text-amber-400 block mb-1 text-sm">MEOW Sensor</strong>
+                            <p class="text-xs text-slate-400">Multimodal ingestion: visual, thermal, and bio-signal array.</p>
+                        </div>
+                        <div class="glass-panel p-5 rounded-lg border border-slate-700 hover:border-emerald-500 transition-colors">
+                            <strong class="text-emerald-400 block mb-1 text-sm">JOSIAH Memory</strong>
+                            <p class="text-xs text-slate-400">Temporal database archiving spatial manipulation and teleoperation datasets.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-5 rounded-lg border-t-4 border-fuchsia-500 mt-4">
+                        <strong class="text-fuchsia-400 block mb-1 uppercase tracking-wider text-xs">The Apex Subscription</strong>
+                        <p class="text-sm text-slate-300">The <strong>Omni Schrodinger Box</strong> and <strong>Neuroconvergent Tesseract</strong> deploy 5D cognitive filtering logic to execute total executive preservation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roles" class="py-24 px-6 border-b border-slate-800 bg-slate-950 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-900/10 via-slate-950 to-slate-950 -z-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-amber-400 text-xs font-mono-custom mb-6 border border-amber-500/30">
+                    <i data-lucide="flame" class="w-4 h-4"></i> The Saiyan Evolution Framework
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Open Bounties &amp; Roles</h2>
+                <p class="text-slate-400 text-lg leading-relaxed max-w-3xl mx-auto">We do not hire standard W-2 employees. We run a decentralized Proof-of-Work bounty board. Bring us the skills, and we provide the open-source Kaio-Ken multipliers to elevate your compute.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-8 rounded-xl border border-slate-700 hover:border-cyan-500 transition-colors group">
+                    <div class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-lucide="bot" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">Kinematics &amp; Hardware Engineer</h3>
+                    <p class="text-cyan-400 font-mono-custom text-xs mb-4 uppercase tracking-widest">Focus: VDVSA &amp; A.M.E.R.I.C.A.</p>
+                    <p class="text-sm text-slate-400 mb-6">Tasked with scaling the Vitruvian Da Vinci Spider Apparatus, optimizing gear ratios, integrating Clevis pin quick-releases, and managing the physical deployment mechanics of the A.M.E.R.I.C.A. rig.</p>
+                    <div class="text-xs font-bold text-slate-500 uppercase">Status: <span class="text-emerald-400">Accepting Bounties</span></div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl border border-slate-700 hover:border-violet-500 transition-colors group">
+                    <div class="w-12 h-12 bg-violet-500/20 text-violet-400 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-lucide="network" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">AI / ML / DL Optimization Node</h3>
+                    <p class="text-violet-400 font-mono-custom text-xs mb-4 uppercase tracking-widest">Focus: POEM &amp; SLIP APIs</p>
+                    <p class="text-sm text-slate-400 mb-6">Tasked with building Agentic AI SQL pipelines, structuring macro-LLMs, and executing the SSJ4 Trinity: Execution, Processing, Scale, to achieve high Validation Accuracy for surgical models.</p>
+                    <div class="text-xs font-bold text-slate-500 uppercase">Status: <span class="text-emerald-400">Accepting Bounties</span></div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors group">
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-400 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-lucide="cpu" class="w-6 h-6"></i></div>
+                    <h3 class="text-xl font-bold text-white mb-2">NPU / Edge Architect</h3>
+                    <p class="text-amber-400 font-mono-custom text-xs mb-4 uppercase tracking-widest">Focus: O.C.T.A.V.I.U.S. &amp; The Tail</p>
+                    <p class="text-sm text-slate-400 mb-6">Tasked with designing the hardware wrapper, specifically The Tail: a Rotary Switch Magnetic Arc Reactor Continuous NPU Prosthesis to anchor unbounded physical transformations.</p>
+                    <div class="text-xs font-bold text-slate-500 uppercase">Status: <span class="text-emerald-400">Accepting Bounties</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apply" class="py-24 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">(Abstract)&sup3; Recruitment Gate</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    We do not accept standard resumes. To open a comm channel, you must prove comprehension of the core survival logic. Read the XYZ Framework, then synthesize it in the terminal below.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <div class="glass-panel p-6 rounded-xl border-t-4 border-slate-500">
-                    <h3 class="text-slate-300 font-bold mb-1 uppercase tracking-wider text-xs">Base Form</h3>
-                    <div class="text-white font-mono-custom text-base md:text-lg mb-4">AI / ML / LM</div>
-                    <p class="text-xs text-slate-500">The foundational algorithms. Theoretical logic without agentic autonomy or deep neural scale.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-4 border-yellow-400">
-                    <h3 class="text-yellow-400 font-bold mb-1 uppercase tracking-wider text-xs">Super Saiyan</h3>
-                    <div class="text-white font-mono-custom text-base md:text-lg mb-4">Agentic AI<br>ML-DL / LLMs</div>
-                    <p class="text-xs text-slate-400">The first breakthrough. Integrating deep learning and large language models for autonomous task execution.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-4 border-amber-500 relative shadow-[0_0_15px_rgba(245,158,11,0.2)]">
-                    <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 px-2 py-1 rounded-bl-lg text-[10px] font-black uppercase tracking-widest">Current Stage</div>
-                    <h3 class="text-amber-500 font-bold mb-1 uppercase tracking-wider text-xs">Super Saiyan 2</h3>
-                    <div class="text-white font-mono-custom text-base md:text-lg mb-4">Agentic AI SQL<br>ML/DL Optimization</div>
-                    <p class="text-xs text-slate-300">Structured database routing mixed with algorithmic optimization. High-efficiency autonomous querying.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-4 border-orange-500">
-                    <h3 class="text-orange-500 font-bold mb-1 uppercase tracking-wider text-xs">Super Saiyan 3</h3>
-                    <div class="text-white font-mono-custom text-base md:text-lg mb-4">Agentic AI SQL Classification<br>ML/DL Optimal Max.<br>Macro LLMs</div>
-                    <p class="text-xs text-slate-400">The limit of software scaling. Optimal maximization applied to interconnected macro LLMs.</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-                <div class="glass-panel p-8 rounded-2xl border border-red-500/50 shadow-[0_0_30px_rgba(239,68,68,0.15)] flex flex-col justify-center relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-red-600 rounded-full blur-3xl opacity-20"></div>
-                    <h3 class="text-2xl font-bold text-red-400 mb-2 flex items-center gap-2"><i data-lucide="flame" class="w-6 h-6"></i> The Kaio-Ken Multiplier</h3>
-                    <p class="text-sm text-slate-300 mb-4 font-mono-custom">Open-Source Equalizer</p>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        A bridge for the neurotypical developer. Utilizing open-source frameworks acts as a synthetic multiplier to elevate baseline compute to the level of innate neurodivergent processing:
-                    </p>
-                    <ul class="mt-4 space-y-2 text-xs font-mono-custom text-red-300">
-                        <li>&gt; x50 Multiplier - Matches Super Saiyan</li>
-                        <li>&gt; x100 Multiplier - Matches Super Saiyan 2</li>
-                        <li>&gt; x400 Multiplier - Matches Super Saiyan 3</li>
-                    </ul>
+            <div class="terminal-window p-6 shadow-[0_0_50px_rgba(34,211,238,0.15)] border-cyan-900/50 min-h-[400px] flex flex-col">
+                <div class="mb-6 border-b border-slate-800 pb-4">
+                    <p class="text-cyan-500 font-mono-custom text-xs uppercase tracking-widest mb-1 flex items-center gap-2"><i data-lucide="terminal" class="w-4 h-4"></i> RECRUITMENT_PROTOCOL.exe</p>
+                    <p class="text-slate-400 text-sm font-mono-custom">Awaiting Applicant Synthesis...</p>
                 </div>
 
-                <div class="glass-panel p-8 rounded-2xl border-2 border-fuchsia-500/50 lg:col-span-2 shadow-[0_0_40px_rgba(217,70,239,0.15)] relative overflow-hidden">
-                    <div class="absolute -left-20 -top-20 w-64 h-64 bg-fuchsia-600 rounded-full blur-3xl opacity-10"></div>
-                    <h3 class="text-2xl font-bold text-fuchsia-400 mb-2 flex items-center gap-2"><i data-lucide="triangle" class="w-6 h-6"></i> Super Saiyan 4: The Unbounded Trinity</h3>
-                    <p class="text-sm text-slate-300 mb-6 font-mono-custom">Convergence -&gt; Validation Accuracy</p>
+                <div id="terminal-output" class="font-mono-custom text-sm text-slate-300 space-y-3 mb-6 flex-grow overflow-y-auto" aria-live="polite">
+                    <p class="text-slate-500">&gt; SYSTEM: Presenting XYZ Framework &amp; Tech Stack.</p>
+                    <p class="text-rose-400">&gt; PROMPT: In 10 words or more, provide a reflective TL;DR (Abstract)&sup3; of why the Safe Sandbox (Y) is critical for building O.C.T.A.V.I.U.S. (Z) without Burnout (X).</p>
+                </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                        <div class="bg-slate-900/80 p-4 rounded-lg border border-fuchsia-900/50">
-                            <strong class="text-fuchsia-300 text-xs uppercase tracking-wider block mb-2">Trinity 1: Execution</strong>
-                            <span class="text-slate-400 text-xs">Agentic AI + SQL + Output Compartmentalization</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-4 rounded-lg border border-fuchsia-900/50">
-                            <strong class="text-fuchsia-300 text-xs uppercase tracking-wider block mb-2">Trinity 2: Processing</strong>
-                            <span class="text-slate-400 text-xs">ML + DL + Optimally Maximized</span>
-                        </div>
-                        <div class="bg-slate-900/80 p-4 rounded-lg border border-fuchsia-900/50">
-                            <strong class="text-fuchsia-300 text-xs uppercase tracking-wider block mb-2">Trinity 3: Scale</strong>
-                            <span class="text-slate-400 text-xs">World Models + Recursive Learning + Macro LLMs</span>
-                        </div>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-slate-900 to-slate-950 p-6 rounded-xl border border-cyan-500/30">
-                        <h4 class="text-cyan-400 font-bold text-sm mb-2 uppercase tracking-widest flex items-center gap-2"><i data-lucide="cpu" class="w-5 h-5"></i> The Beacon / The Tail (Hardware Prosthesis)</h4>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            SSJ4 requires a biological anchor. In this architecture, the tail is a <strong>Rotary Switch Magnetic Arc Reactor Continuous NPU Prosthesis</strong>.
-                        </p>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            This high-tech prosthesis democratizes peak evolution. It allows anyone, through relentless hard work, to access unbounded transformations including Beast/Hybrid Demon, MUI/Impartial, UE/Conquering Stoicism, and Akari/Primal, bypassing reliance on innate neurodivergent prodigy talent.
-                        </p>
-                    </div>
+                <div class="mt-auto">
+                    <label class="flex items-center gap-2 text-cyan-400 font-mono-custom text-sm mb-2" for="tldr-input">
+                        <span>$</span>
+                        <input type="text" id="tldr-input" class="terminal-input bg-transparent border-none w-full text-white placeholder-slate-600 focus:outline-none focus:ring-0" placeholder="Type your application pitch here..." autocomplete="off">
+                    </label>
+                    <button id="validate-btn" class="w-full bg-cyan-950/50 hover:bg-cyan-900/80 text-cyan-400 border border-cyan-800/50 rounded py-3 text-xs font-mono-custom font-bold uppercase tracking-widest transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400/60">
+                        Submit Application
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-slate-950 py-8 border-t border-slate-800 text-center text-slate-600 text-xs font-mono-custom">
-        <p>&copy; 2026 VIOLINS Architecture. OMNI MVP A.R.C.H. Validation Required for Enterprise Deployment.</p>
+        <p>&copy; 2026 VIOLINS Architecture. OMNI MVP Executive Recruitment Brief.</p>
     </footer>
 
     <script>
@@ -346,70 +282,68 @@
         const terminalOutput = document.getElementById('terminal-output');
         const tldrInput = document.getElementById('tldr-input');
         const validateBtn = document.getElementById('validate-btn');
-        const terminalWindow = document.querySelector('.terminal-window');
 
-        function appendSpan(parent, className, text) {
-            const span = document.createElement('span');
-            span.className = className;
-            span.textContent = text;
-            parent.appendChild(span);
-        }
-
-        function printToTerminal(text, type = 'info') {
+        function appendLine(prefix, prefixClass, text, textClass) {
             const p = document.createElement('p');
+            const label = document.createElement('span');
+            const body = document.createElement('span');
 
-            if (type === 'user') {
-                appendSpan(p, 'text-emerald-400', '> STAKEHOLDER_INPUT: ');
-                appendSpan(p, 'text-white', text);
-            } else if (type === 'success') {
-                appendSpan(p, 'text-emerald-500 font-bold', '> ACCESS GRANTED: ');
-                appendSpan(p, 'text-emerald-400', text);
-            } else if (type === 'error') {
-                appendSpan(p, 'text-rose-500 font-bold', '> ERROR: ');
-                appendSpan(p, 'text-rose-400', text);
-            } else {
-                appendSpan(p, 'text-slate-500', '> SYSTEM: ');
-                appendSpan(p, 'text-slate-300', text);
-            }
+            label.className = prefixClass;
+            label.textContent = prefix;
+            body.className = textClass;
+            body.textContent = text;
 
+            p.append(label, document.createTextNode(' '), body);
             terminalOutput.appendChild(p);
             terminalOutput.scrollTop = terminalOutput.scrollHeight;
         }
 
+        function printToTerminal(text, type = 'info') {
+            if (type === 'user') {
+                appendLine('> APPLICANT_INPUT:', 'text-emerald-400', text, 'text-white');
+            } else if (type === 'success') {
+                appendLine('> APPLICATION ACCEPTED:', 'text-emerald-500 font-bold', text, 'text-emerald-400');
+            } else if (type === 'error') {
+                appendLine('> REJECTED:', 'text-rose-500 font-bold', text, 'text-rose-400');
+            } else {
+                appendLine('> SYSTEM:', 'text-slate-500', text, 'text-slate-300');
+            }
+        }
+
         validateBtn.addEventListener('click', () => {
             const inputVal = tldrInput.value.trim();
-
-            if (!inputVal) {
-                return;
-            }
+            if (!inputVal) return;
 
             printToTerminal(inputVal, 'user');
             tldrInput.value = '';
 
-            const words = inputVal.split(/\s+/).length;
-            const normalizedInput = inputVal.toLowerCase();
+            const words = inputVal.split(/\s+/).filter(Boolean).length;
 
             setTimeout(() => {
-                printToTerminal('Analyzing cognitive alignment and semantic density...', 'info');
+                printToTerminal('Analyzing cognitive alignment, semantic density, and Kaio-Ken multiplier potential...', 'info');
 
                 setTimeout(() => {
-                    if (words < 5) {
-                        printToTerminal('Synthesis too shallow. Fails to capture the intersection of sandbox capital and core R&D.', 'error');
-                        printToTerminal('Connection terminated. Neurodivergent alignment not met.', 'error');
-                    } else if (['burnout', 'sandbox', 'protect', 'harvest', 'build'].some((term) => normalizedInput.includes(term))) {
+                    const normalizedInput = inputVal.toLowerCase();
+                    const hasCoreTerm = ['burnout', 'sandbox', 'protect', 'harvest', 'build', 'capital'].some((term) => normalizedInput.includes(term));
+
+                    if (words < 10) {
+                        printToTerminal('Synthesis too shallow. Fails to capture the intersection of Sandbox Capital and Core R&D.', 'error');
+                        printToTerminal('Connection Terminated. Neuro-divergent alignment not met.', 'error');
+                    } else if (hasCoreTerm) {
                         printToTerminal('Semantic Resonance: 98.4%', 'success');
-                        printToTerminal('Abstract³ Validation Complete. Sovereign Leverage Recognized. Welcome to the A.R.C.H.', 'success');
-                        terminalWindow.style.borderColor = '#10b981';
-                        terminalWindow.style.boxShadow = '0 0 50px rgba(16, 185, 129, 0.2)';
+                        printToTerminal('Abstract cubed Validation Complete. Sovereign Leverage Recognized.', 'success');
+                        printToTerminal('Ping contact@violins-prime.org with your encrypted comms key to proceed to Phase 2 interviews.', 'success');
+                        document.querySelector('.terminal-window').style.borderColor = '#10b981';
+                        document.querySelector('.terminal-window').style.boxShadow = '0 0 50px rgba(16, 185, 129, 0.2)';
                     } else {
-                        printToTerminal('Analysis: Acceptable narrative, but lacks core terminology: sandbox, burnout, harvest, protect, or build.', 'error');
-                        printToTerminal("Please recalibrate the founder's required autonomy.", 'error');
+                        printToTerminal('Analysis: Acceptable narrative, but lacks core terminology: Sandbox, Burnout, Harvest, or Capital.', 'error');
+                        printToTerminal("Please recalibrate your understanding of the founder's required autonomy and try again.", 'error');
                     }
                 }, 1500);
             }, 500);
         });
 
-        tldrInput.addEventListener('keydown', (event) => {
+        tldrInput.addEventListener('keypress', (event) => {
             if (event.key === 'Enter') {
                 validateBtn.click();
             }
